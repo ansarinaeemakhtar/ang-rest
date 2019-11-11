@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h2 class="mt-5 mb-5">users</h2>
+    <div class="col-12">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Contact No.</th>
+            <th scope="col">City</th>
+            <th scope="col">Company</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td scope="row">{{ i+1 }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.address.city }}</td>
+            <td>{{ user.company.name }}</td>
+            <td><a href="javascript:void(0)">Album</a></td>
+            <td><a href="javascript:void(0)">Comments</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <h2 class="mt-5 mb-5">Album</h2>
+    <div class="col-12">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">userid</th>
+            <th scope="col">album name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let album of albums; let i = index">
+            <td scope="row">{{ i+1 }}</td>
+            <td>{{ album.id }}</td>
+            <td>{{ album.userId }}</td>
+            <td>{{ album.title }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <h2 class="mt-5 mb-5">comments</h2>
+    <div class="col-12">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">postid</th>
+            <th scope="col">name</th>
+            <th scope="col">body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comment of comments; let i = index">
+            <td scope="row">{{ i+1 }}</td>
+            <td>{{ comment.id }}</td>
+            <td>{{ comment.postId }}</td>
+            <td>{{ comment.name }}</td>
+            <td>{{ comment.body }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
